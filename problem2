@@ -1,10 +1,33 @@
 ## problem 2 solution 
 
 ```cpp
+
 class Player{
+private:
+    string Name;
+    int Level;
+    int Score;
 
+public:
 
+// constructors 
+player();
+player(string, int)
 
+//getters
+string getName(string);
+int getLevel(int);
+int getScore(int);
+
+//setters
+void setName(string);
+void setLevel(int);
+void setScore(int);
+
+// levelup
+void levelup(){
+    level++;
+}
 
 };
 ```
