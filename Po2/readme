@@ -1,0 +1,47 @@
+# imgtool Argument Parser
+
+## Build
+
+g++ main.cpp Args.cpp -o imgtool
+
+## Usage
+
+./imgtool <input_image> <output_image> [options]
+
+## Supported Options
+
+Flags:
+--grayscale  (-g)
+--blur       (-l)
+--flipH      (-h)
+--flipV      (-v)
+
+Options with values:
+--brighten N (-b N)  where N in [-255,255]
+--rotate N   (-r N)  where N in {0,90,180,270}
+
+Also supports:
+
+--brighten=20
+--rotate=90
+
+## Examples
+
+Valid:
+
+./imgtool in.png out.png --grayscale
+
+./imgtool in.png out.png -g -b 20 --rotate=90
+
+./imgtool "my image.png" out.png --blur
+
+Invalid:
+
+./imgtool in.png
+Error: missing output file
+
+./imgtool in.png out.png --brighten
+Error: --brighten requires an integer value
+
+./imgtool in.png out.png --brighten twenty
+Error: invalid integer for --brighten: twenty
