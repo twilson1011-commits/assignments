@@ -1,0 +1,28 @@
+## problem 3 solution 
+
+```cpp
+class bankaccount {
+public:
+string Name;
+double Amount;
+
+public:
+account();
+account(string,double);
+
+// setters 
+void setName(string);
+void setAmount(double);
+void setAccountNumber(string);
+
+//getters
+string getName(string);
+double getAmount(int);
+
+// methods 
+void withdraw(double);
+
+void transfer(string, string, double);
+
+};
+```
