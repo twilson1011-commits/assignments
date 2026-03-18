@@ -15,7 +15,7 @@ int main(int argc, char* argv[]) {
         cout << "INPUT  : " << args.input << "\n";
         cout << "OUTPUT : " << args.output << "\n";
 
-        std::cout << "FLAGS  : ";
+        cout << "FLAGS  : ";
         if (args.grayscale) cout << "grayscale ";
         if (args.blur) cout << "blur ";
         if (args.flipH) cout << "flipH ";
