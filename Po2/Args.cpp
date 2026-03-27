@@ -3,8 +3,6 @@
 #include <stdexcept>
 #include namespace std;
 
-// typo error fix 
-
 
 static void usage() {
     cerr << "Usage: ./imgtool <input_image> <output_image> [options]\n";
