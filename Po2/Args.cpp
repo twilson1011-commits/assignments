@@ -62,7 +62,7 @@ Args Args::parse(int argc, char* argv[]) {
             val = token.substr(eq + 1);
         }
 
-        // -------- FLAGS --------
+        //flags
         if (opt == "--grayscale" || opt == "-g") {
             args.grayscale = true;
         }
@@ -76,7 +76,7 @@ Args Args::parse(int argc, char* argv[]) {
             args.flipV = true;
         }
 
-        // -------- BRIGHTEN --------
+        //brighten
         else if (opt == "--brighten" || opt == "-b") {
             if (val.empty()) {
                 if (i + 1 >= argc)
@@ -94,7 +94,7 @@ Args Args::parse(int argc, char* argv[]) {
             args.brighten = num;
         }
 
-        // -------- ROTATE --------
+        // rotation
         else if (opt == "--rotate" || opt == "-r") {
             if (val.empty()) {
                 if (i + 1 >= argc)
@@ -112,7 +112,7 @@ Args Args::parse(int argc, char* argv[]) {
             args.rotate = num;
         }
 
-        // -------- GROUPED SHORT FLAGS (EXTRA CREDIT) --------
+        // grouped short flags
         else if (token.size() > 2 && token[0] == '-' && token[1] != '-') {
             for (size_t j = 1; j < token.size(); ++j) {
                 char c = token[j];
