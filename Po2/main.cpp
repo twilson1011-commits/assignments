@@ -8,6 +8,7 @@ void print_usage() {
 
 int main(int argc, char* argv[]) {
 
+    
     try {
 
         Args args = Args::parse(argc, argv);
