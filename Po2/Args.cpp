@@ -1,26 +1,30 @@
 #include "Args.h"
 #include <iostream>
 #include <stdexcept>
+#include namespace std;
+
+// typo error fix 
+
 
 static void usage() {
-    std::cerr << "Usage: ./imgtool <input_image> <output_image> [options]\n";
+    cerr << "Usage: ./imgtool <input_image> <output_image> [options]\n";
 }
 
-static void error(const std::string& msg) {
-    std::cerr << "Error: " << msg << "\n";
+static void error(const string& msg) {
+    cerr << "Error: " << msg << "\n";
     usage();
-    throw std::runtime_error(msg);
+    throw runtime_error(msg);
 }
 
-static bool is_option(const std::string& s) {
+static bool is_option(const string& s) {
     return !s.empty() && s[0] == '-';
 }
 
-static int parse_int(const std::string& s, const std::string& opt) {
+static int parse_int(const string& s, const string& opt) {
     try {
         size_t idx;
-        int val = std::stoi(s, &idx);
-        if (idx != s.size()) throw std::invalid_argument("extra chars");
+        int val = stoi(s, &idx);
+        if (idx != s.size()) throw invalid_argument("extra chars");
         return val;
     } catch (...) {
         error("invalid integer for " + opt + ": " + s);
@@ -39,8 +43,8 @@ static void validate_rotate(int val) {
 }
 
 Args Args::parse(int argc, char* argv[]) {
-    if (argc < 3) {
-        error("missing required arguments");
+    if (argc < 2) error("missing input file");
+    if (argc < 3) error("missing output file");
     }
 
     Args args;
@@ -48,14 +52,14 @@ Args Args::parse(int argc, char* argv[]) {
     args.output = argv[2];
 
     for (int i = 3; i < argc; ++i) {
-        std::string token = argv[i];
+        string token = argv[i];
 
         // Handle --option=value
-        std::string opt = token;
-        std::string val;
+        string opt = token;
+        string val;
 
         size_t eq = token.find('=');
-        if (eq != std::string::npos) {
+        if (eq != string::npos) {
             opt = token.substr(0, eq);
             val = token.substr(eq + 1);
         }
@@ -118,7 +122,7 @@ Args Args::parse(int argc, char* argv[]) {
                 else if (c == 'l') args.blur = true;
                 else if (c == 'h') args.flipH = true;
                 else if (c == 'v') args.flipV = true;
-                else error(std::string("unknown option -") + c);
+                else error(string("unknown option -") + c);
             }
         }
 
