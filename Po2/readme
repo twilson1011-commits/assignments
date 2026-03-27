@@ -42,6 +42,3 @@ Error: missing output file
 
 ./imgtool in.png out.png --brighten
 Error: --brighten requires an integer value
-
-./imgtool in.png out.png --brighten twenty
-Error: invalid integer for --brighten: twenty
