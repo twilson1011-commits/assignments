@@ -16,7 +16,5 @@ void Grayscale::apply(Grid& pixels) {
         }
     }
 }    
-std::string Grayscale::name() const {
-    return "grayscale"; 
-}
+
 
