@@ -13,5 +13,6 @@
 # 5. Full pipeline with rotation
 ./imgtool images/Hulda.jpg out5.png --rotate 90 --grayscale --brighten 30 --blur
 
+# Grayscale code choice
 I used the luminance formula in the grayscale.cpp because it takes into effect that the eye is more sensitive 
 to the color green so it needs more attention than the rest of the colors.
